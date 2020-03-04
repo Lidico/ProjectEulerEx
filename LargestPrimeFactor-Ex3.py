@@ -19,4 +19,4 @@ def largerPrimeFactor(number):
 
     return int(maxPrime)
 
-print(largerPrimeFactor(60))
+print(largerPrimeFactor(600851475143))
