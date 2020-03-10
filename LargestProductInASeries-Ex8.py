@@ -31,7 +31,6 @@ def LargestProductInASeries(digits1000, n):
             pointer += 1
             continue
         if pointer < lenOfNum - n:
-            print(tempSum,"/",int(str(digits1000)[pointer]),"*",int(str(digits1000)[pointer+n]),"=",(int(tempSum/int(str(digits1000)[pointer])))*int(str(digits1000)[pointer+n]))
             tempSum = (int(tempSum/int(str(digits1000)[pointer])))*int(str(digits1000)[pointer+n])
         maxSum = max(tempSum, maxSum)
         pointer += 1
