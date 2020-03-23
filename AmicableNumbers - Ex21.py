@@ -6,17 +6,19 @@ For example, the proper divisors of 220 are 1, 2, 4, 5, 10, 11, 20, 22, 44, 55 a
  The proper divisors of 284 are 1, 2, 4, 71 and 142; so d(284) = 220.
 Evaluate the sum of all the amicable numbers under 10000.
 """
+import math
 from functools import reduce
 from pip._vendor.urllib3.connectionpool import xrange
 
 
 def sumOfDivisors(n) :
-    i = 1
-    sumOfDivisors = 0
-    while i < n :
-        if (n % i == 0) :
-            sumOfDivisors += i
-        i = i + 1
+    sqrtNum = math.sqrt(n)
+    sumOfDivisors = 1
+    if n == sqrtNum * sqrtNum:
+        sqrtNum -= 1
+    for i in xrange(2, int(sqrtNum)):
+        if n % i == 0:
+            sumOfDivisors += i + (n / i)
     return sumOfDivisors
 
 def amicableNumbers(n):
@@ -34,6 +36,6 @@ def amicableNumbers(n):
                 listOfAmicables.append(amicable1)
                 listOfAmicables.append( amicable2)
         i += 1
-    return reduce(lambda x, y: x + y, listOfAmicables)
+    return reduce(lambda x, y: int(x) + int(y), listOfAmicables)
 
 print(amicableNumbers(10000))
