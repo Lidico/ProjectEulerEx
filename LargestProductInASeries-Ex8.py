@@ -8,6 +8,7 @@ def checkIfContainsZero(strCut):
             return (True,i)
     return (False,len(strCut))
 
+
 def LargestProductInASeries(digits1000, n):
     lenOfNum = len(str(digits1000))
     maxSum = 1
