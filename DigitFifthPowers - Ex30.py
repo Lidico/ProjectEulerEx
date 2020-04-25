@@ -29,3 +29,4 @@ def digitsFifthPowers(n):
     return sumOfFifthPowers
 
 print(digitsFifthPowers(5))
+
